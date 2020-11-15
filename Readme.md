@@ -1,9 +1,13 @@
-#Preprocessing Package
-
-This python package is prepared by S.Harish
+# Preprocessing Text Python Package
 
 
 
-`pip install git+ssh://git@github.com/harishsdev/preprocess_harishsdev.git`
+This python package is prepared by Harish Shankam
+
+Install
+
+`pip install git+ssh://git@github.com/kgptalkie/preprocess_harishsdev.git`
+
+Uninstall
 
 `pip uninstall preprocess_harishsdev`
