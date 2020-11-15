@@ -11,13 +11,13 @@ from textblob import TextBlob
 
 
 def _get_word_counts(x):
-	length=len(str(x).split())
-    return length
+    length=len(str(x).split())
+        return length
 
 def _get_char_counts(x):
     s = x.split()
     x = ''.join(s)
-    return len(x)
+        return len(x)
 
 def _get_avg_wordlength(x):
     count=_get_char_counts/_get_word_counts
@@ -25,15 +25,15 @@ def _get_avg_wordlength(x):
 
 def _get_stopwords_counts(x):
     l=len([t for t in x.split() if t in stopwords])
-    return l
+        return l
 
 def _get_hashtag_counts(x):
 	l=len([[t for t in x.split() if t.startswith('#')]])
-	return l
+	    return l
 
 def _get_mentions_counts(x):
 	l=len([[t for t in x.split() if t.startswith('@')]])
-	return l
+	    return l
 
 def _get_digit_counts(x):
     return len([t for t in x.split() if t.isdigit()])
@@ -141,7 +141,7 @@ def _get_cont_to_exp(x):
 def _get_emails(x):
     emails=re.findall(r'([a-z0-9+._-]+@[a-z0-9+._-]+\.[a-z0-9+_-]+)', x)
     counts=len(emails)
-    return ecounts,emails
+        return ecounts,emails
 
 def _remove_emails(x):
     return re.sub(r'([a-z0-9+._-]+@[a-z0-9+._-]+\.[a-z0-9+_-]+)',"", x)
@@ -149,7 +149,7 @@ def _remove_emails(x):
 def _get_urls(x):
     urls=re.findall(r'(http|https|ftp|ssh)://([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:/~+#-]*[\w@?^=%&/~+#-])?', x)
     counts=len(urls)
-    return counts,urls
+        return counts,urls
 
 def _remove_urls(x):
     return re.sub(r'(http|https|ftp|ssh)://([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:/~+#-]*[\w@?^=%&/~+#-])?', '' , x)
@@ -160,7 +160,7 @@ def _remove_rt(x):
 def _remove_special_chars(x):
     x=re.sub(r'[^\w ]+', "", x)
     x=' '.join(x.split())
-    return x
+        return x
 
 def _remove_html_tags(x):
     return BeautifulSoup(x, 'lxml').get_text().strip()
@@ -168,7 +168,7 @@ def _remove_html_tags(x):
 
 def remove_accented_chars(x):
     x = unicodedata.normalize('NFKD', x).encode('ascii', 'ignore').decode('utf-8', 'ignore')
-    return x
+        return x
 
 
 
@@ -185,7 +185,7 @@ def _make_to_base(x):
             lemma = token.text
 
         x_list.append(lemma)
-    return ' '.join(x_list)
+return ' '.join(x_list)
 
 
 
