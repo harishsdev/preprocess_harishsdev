@@ -19,12 +19,12 @@ def _get_char_counts(x):
     x = ''.join(s)
     return len(x)
 
- def _get_avg_wordlength(x):
+def _get_avg_wordlength(x):
     count=_get_char_counts/_get_word_counts
- 	return count
+        return count
 
- def _get_stopwords_counts(x):
- 	l=len([t for t in x.split() if t in stopwords])
+def _get_stopwords_counts(x):
+    l=len([t for t in x.split() if t in stopwords])
     return l
 
 def _get_hashtag_counts(x):
@@ -38,10 +38,10 @@ def _get_mentions_counts(x):
 def _get_digit_counts(x):
     return len([t for t in x.split() if t.isdigit()])
 
- def _get_uppercase_counts(x):
- 	 return [t for t in x.split() if t.isupper()]
+def _get_uppercase_counts(x):
+    return [t for t in x.split() if t.isupper()]
 
- def _get_cont_to_exp(x):
+def _get_cont_to_exp(x):
  	 contractions = { 
         "ain't": "am not",
         "aren't": "are not",
@@ -62,21 +62,21 @@ def _get_digit_counts(x):
         "he'd've": "he would have",
         "he'll": "he will",
         "he'll've": "he will have",
-"he's": "he is",
-"how'd": "how did",
-"how'd'y": "how do you",
-"how'll": "how will",
-"how's": "how does",
-"i'd": "i would",
-"i'd've": "i would have",
-"i'll": "i will",
-"i'll've": "i will have",
-"i'm": "i am",
-"i've": "i have",
-"isn't": "is not",
-"it'd": "it would",
-"it'd've": "it would have",
-"it'll": "it will",
+        "he's": "he is",
+        "how'd": "how did",
+        "how'd'y": "how do you",
+        "how'll": "how will",
+        "how's": "how does",
+        "i'd": "i would",
+        "i'd've": "i would have",
+        "i'll": "i will",
+        "i'll've": "i will have",
+        "i'm": "i am",
+        "i've": "i have",
+        "isn't": "is not",
+        "it'd": "it would",
+        "it'd've": "it would have",
+        "it'll": "it will",
 "it'll've": "it will have",
 "it's": "it is",
 "let's": "let us",
@@ -119,14 +119,14 @@ def _get_digit_counts(x):
 "they're": "they are",
 "they've": "they have",
 "to've": "to have",
-"wasn't": "was not",
-" u ": " you ",
-" ur ": " your ",
-" n ": " and ",
-"won't": "would not",
-'dis': 'this',
-'bak': 'back',
-'brng': 'bring'}
+        "wasn't": "was not",
+        " u ": " you ",
+        " ur ": " your ",
+        " n ": " and ",
+        "won't": "would not",
+        'dis': 'this',
+        'bak': 'back',
+        'brng': 'bring'}
 
  
     if type(x) is str:
@@ -139,27 +139,28 @@ def _get_digit_counts(x):
 
 
 def _get_emails(x):
-	emails=re.findall(r'([a-z0-9+._-]+@[a-z0-9+._-]+\.[a-z0-9+_-]+)', x)
+    emails=re.findall(r'([a-z0-9+._-]+@[a-z0-9+._-]+\.[a-z0-9+_-]+)', x)
     counts=len(emails)
     return ecounts,emails
 
- def _remove_emails(x):
- 	return re.sub(r'([a-z0-9+._-]+@[a-z0-9+._-]+\.[a-z0-9+_-]+)',"", x)
+def _remove_emails(x):
+    return re.sub(r'([a-z0-9+._-]+@[a-z0-9+._-]+\.[a-z0-9+_-]+)',"", x)
 
 def _get_urls(x):
-	urls=re.findall(r'(http|https|ftp|ssh)://([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:/~+#-]*[\w@?^=%&/~+#-])?', x)
+    urls=re.findall(r'(http|https|ftp|ssh)://([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:/~+#-]*[\w@?^=%&/~+#-])?', x)
     counts=len(urls)
     return counts,urls
+
 def _remove_urls(x):
-	return re.sub(r'(http|https|ftp|ssh)://([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:/~+#-]*[\w@?^=%&/~+#-])?', '' , x)
+    return re.sub(r'(http|https|ftp|ssh)://([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:/~+#-]*[\w@?^=%&/~+#-])?', '' , x)
 
 def _remove_rt(x):
-	return re.sub(r'\brt\b', '', x).strip()
+    return re.sub(r'\brt\b', '', x).strip()
 
 def _remove_special_chars(x):
-	x=re.sub(r'[^\w ]+', "", x)
-	x=' '.join(x.split())
-	return x
+    x=re.sub(r'[^\w ]+', "", x)
+    x=' '.join(x.split())
+    return x
 
 def _remove_html_tags(x):
     return BeautifulSoup(x, 'lxml').get_text().strip()
