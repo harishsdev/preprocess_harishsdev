@@ -15,6 +15,5 @@ setuptools.setup(
     classifiers=[
     'Programming Language::python::3',
     'License::OSI Aproved::MIT License',
-    "operating system :: OS Independent"
     ]
 )
