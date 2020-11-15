@@ -12,7 +12,7 @@ from textblob import TextBlob
 
 def _get_word_counts(x):
 	length=len(str(x).split())
-	return length
+    return length
 
 def _get_char_counts(x):
     s = x.split()
@@ -20,7 +20,7 @@ def _get_char_counts(x):
     return len(x)
 
  def _get_avg_wordlength(x):
- 	count=_get_char_counts/_get_word_counts
+    count=_get_char_counts/_get_word_counts
  	return count
 
  def _get_stopwords_counts(x):
@@ -36,32 +36,32 @@ def _get_mentions_counts(x):
 	return l
 
 def _get_digit_counts(x):
-   return len([t for t in x.split() if t.isdigit()])
+    return len([t for t in x.split() if t.isdigit()])
 
  def _get_uppercase_counts(x):
- 	return [t for t in x.split() if t.isupper()]
+ 	 return [t for t in x.split() if t.isupper()]
 
  def _get_cont_to_exp(x):
- 	contractions = { 
-"ain't": "am not",
-"aren't": "are not",
-"can't": "cannot",
-"can't've": "cannot have",
-"'cause": "because",
-"could've": "could have",
-"couldn't": "could not",
-"couldn't've": "could not have",
-"didn't": "did not",
-"doesn't": "does not",
-"don't": "do not",
-"hadn't": "had not",
-"hadn't've": "had not have",
-"hasn't": "has not",
-"haven't": "have not",
-"he'd": "he would",
-"he'd've": "he would have",
-"he'll": "he will",
-"he'll've": "he will have",
+ 	 contractions = { 
+        "ain't": "am not",
+        "aren't": "are not",
+        "can't": "cannot",
+        "can't've": "cannot have",
+        "'cause": "because",
+        "could've": "could have",
+        "couldn't": "could not",
+        "couldn't've": "could not have",
+        "didn't": "did not",
+        "doesn't": "does not",
+        "don't": "do not",
+        "hadn't": "had not",
+        "hadn't've": "had not have",
+        "hasn't": "has not",
+        "haven't": "have not",
+        "he'd": "he would",
+        "he'd've": "he would have",
+        "he'll": "he will",
+        "he'll've": "he will have",
 "he's": "he is",
 "how'd": "how did",
 "how'd'y": "how do you",

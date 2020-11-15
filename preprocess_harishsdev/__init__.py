@@ -22,7 +22,7 @@ def get_mentions_counts(x):
     return utils._get_mentions_counts(x)
 
 def get_digit_counts(x):
-   return utils._get_digit_counts(x)
+    return utils._get_digit_counts(x)
 
  def get_uppercase_counts(x):
     return utils._get_uppercase_counts(x)
