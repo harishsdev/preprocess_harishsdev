@@ -14,6 +14,6 @@ setuptools.setup(
     packages=setuptools.find_packages,
     classifiers=[
     'Programming Language::python::3',
-    'License::OSI Aproved::MIT License',
+    'License::OSI Aproved::MIT License'
     ]
 )
